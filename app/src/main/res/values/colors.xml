@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    008577-->
+    <color name="colorPrimary">@color/btn_color</color>
+    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorAccent">@color/txt</color>
+<!--D81B60-->
+
+    <color name="log_color">#212121</color>
+    <color name="btn_color">#46C489</color>
+    <color name="txt">#E0E0E0</color>
+    <color name="bg_color">#F5F5F5</color>
+
+    <color name="blue_grey">#607d8b</color>
+    <color name="emphasis">#31b6e7</color>
+    <color name="white">#fff</color>
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#757575</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PARADOW</string>
+
+
+    <string name="title_home">Home</string>
+    <string name="title_favorite">Favourite</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_discover">Discover</string>
+    <string name="blank" />
+    <string name="title_text">Text</string>
+    <string name="title_control">Control</string>
+</resources>

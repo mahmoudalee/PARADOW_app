@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_color"
+    tools:context=".Activities.ReviewActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/SliderDots"
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:gravity="center"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/review_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AR"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_gravity="end"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/review_cat_bg"
+            android:onClick="Augmented"/>
+
+        <TextView
+            android:id="@+id/image_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:id="@+id/review_cat_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animal"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:background="@drawable/review_cat_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supported Color Models"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multicolor"
+            android:layout_marginHorizontal="30dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Color"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="28dp"
+            android:background="@drawable/log_btn"
+            android:paddingHorizontal="75dp"
+            android:text="Choose"
+            android:textAllCaps="false"
+            android:onClick="choose"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+
+    <style name="ETStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <!--        colorControlActivated-->
+        <item name="colorControlNormal">#d32f2f</item>
+        <item name="colorControlActivated">#ff5722</item>
+        <item name="colorControlHighlight">#f44336</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textColor">@color/txt</item>
+        <item name="android:textColorHint">@color/txt</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="ProgressBar.Theme" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/loading</item>
+        <item name="android:indeterminateTint">@color/colorPrimary</item>
+    </style>
+
+</resources>
