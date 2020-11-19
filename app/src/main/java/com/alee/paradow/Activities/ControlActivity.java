@@ -8,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -59,6 +61,7 @@ import retrofit2.Response;
 public class ControlActivity extends AppCompatActivity {
 
     public static final String TAG = "ControlActivity:";
+    public String SVG_PATH;
     ActivityControlBinding binding;
     String image;
 
@@ -69,6 +72,7 @@ public class ControlActivity extends AppCompatActivity {
         binding = ActivityControlBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        SVG_PATH = String.valueOf(this.getExternalFilesDir("/Paradow"));
         isStoragePermissionGranted();
 
 
@@ -76,13 +80,19 @@ public class ControlActivity extends AppCompatActivity {
         image = intent.getStringExtra("image");
         downloadImage(image);
 
-//        if (Build.VERSION.SDK_INT >= 23) {
-//            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-//                Log.v(TAG, "Permission is granted");
-//                //File write logic here
-//            } else
-//                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-//        }
+
+        final ProgressDialog progressDialog = new ProgressDialog(this,
+                R.style.AppTheme_Dark_Dialog);
+        progressDialog.setIndeterminate(true);
+        //TODO:(3) if some edit needed to back press not close the dialog
+        progressDialog.setMessage("Connecting to device...");
+        progressDialog.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                progressDialog.dismiss();
+            }
+        }, 3000);
 
         //TODO(19) download image and convert it to bytes and upload
         //TODO(20) data is going to be the file path
@@ -116,21 +126,21 @@ public class ControlActivity extends AppCompatActivity {
     }
 
     private void prepareImage() {
-        Log.i(TAG, Environment.getExternalStoragePublicDirectory("/Paradow")+"");
+        Log.i(TAG, SVG_PATH);
         Uri file_path = null;
-        File folder = new File(Environment.getExternalStoragePublicDirectory("/Paradow")+"");
+        File folder = new File(SVG_PATH);
         boolean success = true;
         if (!folder.exists()) {
             success = folder.mkdirs();
             Log.i(TAG, String.valueOf(success));
 
-            Toast.makeText(ControlActivity.this, "folder created please put the svg 1.svg in the folder ", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(ControlActivity.this, "folder created please put the svg 1.svg in the folder ", Toast.LENGTH_SHORT).show();
 
         }
         if (success) {
             // Do something on success
             //todo download the image over here
-            file_path = Uri.parse("file://"+Environment.getExternalStoragePublicDirectory("/Paradow")+"/1.svg");
+            file_path = Uri.parse("file://"+SVG_PATH+"/1.svg");
 
         } else {
             // Do something else on failure
@@ -239,6 +249,8 @@ public class ControlActivity extends AppCompatActivity {
     }
 
     void downloadImage(String image){
+        Log.i(TAG, Environment.getExternalStoragePublicDirectory("/Android/data/com.alee.paradow/files/Paradow")+ "");
+        Log.i(TAG, SVG_PATH);
 
         File folder = new File(Environment.getExternalStoragePublicDirectory("/Android/data/com.alee.paradow/files/Paradow")+ "");
         boolean success = true;

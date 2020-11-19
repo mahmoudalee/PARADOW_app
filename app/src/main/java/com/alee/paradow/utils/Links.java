@@ -15,7 +15,6 @@ public class Links {
     public static final String BASE_URL = "http://paradow.herokuapp.com/";
     public static final String DEVICE_URL = "http://192.168.0.23/";
 
-
     public static void calImageView(Long id) {
         DataService service = RetrofitInstance.getRetrofitInstance().create(DataService.class);
         Call<Datum> call = service.ImageViewed(id);

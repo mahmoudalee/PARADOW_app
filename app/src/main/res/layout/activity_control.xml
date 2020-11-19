@@ -51,8 +51,8 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="99dp"
-        android:layout_height="120dp"
+        android:layout_width="161dp"
+        android:layout_height="160dp"
         android:layout_marginTop="248dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/view1"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_favorite" />
+            android:src="@drawable/arrow_down" />
 
         <ImageView
             android:id="@+id/up"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/view1"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_favorite" />
+            android:src="@drawable/arrow_up" />
 
         <ImageView
             android:id="@+id/right"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/view1"
-            android:src="@drawable/ic_favorite" />
+            android:src="@drawable/arrow_right" />
 
         <ImageView
             android:id="@+id/left"
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/view1"
-            android:src="@drawable/ic_favorite" />
+            android:src="@drawable/arrow_left" />
     </RelativeLayout>
 
     <Button
